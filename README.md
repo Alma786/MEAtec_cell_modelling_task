@@ -30,7 +30,7 @@ A key focus of this work is the selection and optimization of **Half-Cell Open C
 ---
 
 ## Modeling Framework
-- **Electrochemical Model**: Single Particle Model (SPM / SPM+)
+- **Electrochemical Model**: Single Particle Model (SPMe)
 - **Simulation Library**: PyBaMM
 - **Data Sources**:
   - Experimental 1C discharge data
@@ -123,7 +123,7 @@ WLTP (95k km) Drive Cycle Validation
 ## Evaluation Metrics
 - Voltage RMSE
 - Overpotential decomposition:
-  - Kinetic overpotential
+  - Reaction overpotential
   - Diffusion overpotential
   - Ohmic losses
 
@@ -143,14 +143,15 @@ WLTP (95k km) Drive Cycle Validation
 - Current sign convention is critical (discharge current > 0 in PyBaMM)
 - HOCVs are manually curated first before joint optimization
 - Parameter bounds are chosen to ensure physical realism
-- WLTP validation is performed without re-tuning parameters
+- Optimization activity is performed on 1C data and validated with HPPC data.
+- HPPC Optimization activity could not be performed due to RAM limitation. Although code is available in the Maintestfile.ipynb
+- WLTP validation could not be performed because of a random error, which could not be solved within the given timeline.
 
 ---
 
 ## Future Extensions
 - Full DFN model comparison
 - Inclusion of aging and degradation parameters
-- Automated HOCV selection
 - Global parameter estimation
 
 ---
